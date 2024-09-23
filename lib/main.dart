@@ -1,8 +1,11 @@
 import 'package:demo_essa/Cours3.dart';
 import 'package:demo_essa/Cours4.dart';
+import 'package:demo_essa/Cours6.dart';
 import 'package:demo_essa/Exo1Cours4.dart';
 import 'package:demo_essa/Exo2Cours4.dart';
+import 'package:demo_essa/Navigation.dart';
 import 'package:flutter/material.dart';
+import 'Essaie.dart';
 import 'HomePage.dart';
 import 'Cours2.dart';
 import 'Exo1.dart';
@@ -18,8 +21,20 @@ class Demo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        "/cours6": (context) => Cours6(),
+        "/navigation": (context) => Navigation()
+      },
+      theme: ThemeData(
+        textTheme: TextTheme(
+          bodyLarge: TextStyle(
+            color: Colors.red,
+            fontSize: 20,
+          ),
+        ),
+      ),
       debugShowCheckedModeBanner: false,
-      home: Exo2Cours4(),
+      home: Cours6(),
     );
   }
 }
